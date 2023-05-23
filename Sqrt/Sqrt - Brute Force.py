@@ -1,5 +1,3 @@
-import math
-
 def sqrt(n) -> int:
     for i in range(0, n):
         if (i ** 2) == n:
