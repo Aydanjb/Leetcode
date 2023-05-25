@@ -1,17 +1,14 @@
 def shortestDistance(words, word1, word2):
-    end = words.index(word2)
-    indices1 = []
-    distances = []
-    for i in range(len(words)):
-        if words[i] == word1:
-            indices1.append(i)
+    shortestDistance = len(words)
+    pos1, pos2 = -1, -1
     
-    for i in range(len(indices1)):
-        if indices1[i] < end:
-            distances.append(end - indices1[i])
-        if indices1[i] > end:
-            distances.append(indices1[i] - end)
+    for i, word in enumerate(words):
+        if word == word1:
+            pos1 = i
+        if word == word2:
+            pos2 = i
 
-    return min(distances)
-
-print(shortestDistance(["a", "c", "d", "b", "a"], "a", "b"))
+        if pos1 != -1 and pos2 != -1:
+            shortestDistance = min(shortestDistance, abs(pos1 - pos2))
+    
+    return shortestDistance
