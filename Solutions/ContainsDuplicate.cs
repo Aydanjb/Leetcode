@@ -10,14 +10,6 @@ public class Solution217
         {
             if (!freqMap.TryAdd(n, 1))
             {
-                freqMap[n] += 1;
-            }
-        }
-
-        foreach (var key in freqMap)
-        {
-            if (key.Value > 1)
-            {
                 return true;
             }
         }
