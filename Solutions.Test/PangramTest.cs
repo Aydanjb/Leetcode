@@ -1,5 +1,3 @@
-using NuGet.Frameworks;
-
 namespace Solutions.Test;
 
 public class PangramTest
