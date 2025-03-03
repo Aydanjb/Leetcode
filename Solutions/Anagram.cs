@@ -1,5 +1,8 @@
 namespace Solutions;
 
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+// n: Size of input strings
 public class Solution242
 {
     public bool IsAnagram(string s, string t)
@@ -19,10 +22,8 @@ public class Solution242
         }
 
         // If both strings contain exactly the same characters, the array should only contain zeroes.
-        foreach (var n in diffs)
-        {
-            if (n != 0) return false;
-        }
+        if (diffs.All(n => n == 0))
+            return true;
 
         return true;
     }

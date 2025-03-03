@@ -1,5 +1,8 @@
 namespace Solutions;
 
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+// n: Size of input string
 public class Solution1832
 {
     public bool CheckIfPangram(string sentence)
