@@ -7,23 +7,16 @@ public class Solution1832
 {
     public bool CheckIfPangram(string sentence)
     {
-        // Create a dictionary to keep track of which letters we've seen.
-        Dictionary<char, int> alphabet = new Dictionary<char, int>();
+        // Create a hashset to keep track of characters we've seen
+        HashSet<char> characters = new HashSet<char>();
 
-        // Ignore case.
-        string s = sentence.ToLower();
-        foreach (char c in s)
+        // Add each character to the hashset
+        foreach (char c in sentence)
         {
-            // Ignore numbers, symbols, and whitespace.
-            if (!char.IsLetter(c)) continue;
-
-            // If the letter is already in our dictionary, ignore it. Otherwise, add it with a value of 1.
-            alphabet.TryAdd(c, 1);
+            characters.Add(c);
         }
 
-        // If there's 26 keys in our dictionary, the sentence is a pangram. Otherwise, return false.
-        if (alphabet.Sum(x => x.Value) < 26) return false;
-
-        return true;
+        // If the sentence contains all 26 letters, it is a pangram
+        return characters.Count == 26;
     }
 }
