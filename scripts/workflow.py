@@ -38,6 +38,8 @@ header_comment = f"""// Source: {problem_metadata['link']}
 
 // Leetcode {problem_metadata['questionFrontendId']}. {problem_metadata['questionTitle']}
 // Difficulty: {problem_metadata['difficulty']}
+// Time Complexity:
+// Space Complexity:
 """
 
 template = f"""namespace Solutions.{problem_name};
