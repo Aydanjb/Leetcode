@@ -61,10 +61,9 @@ rows = readme_lines[table_start + 2:table_end]
 
 # Add the new problem, and sort by problem number
 problem_number = int(problem_metadata['questionFrontendId'])
-topics = ", ".join(tag['name'] for tag in problem_metadata['topicTags'])
 solution_path = solution_file.relative_to(SCRIPTS_DIR.parent).as_posix()
 new_row = (f"| {problem_number} | [{problem_metadata['questionTitle']}]({problem_metadata['link']}) "
-           f"| {problem_metadata['difficulty']} | {topics} | [C#]({solution_path}) |")
+           f"| {problem_metadata['difficulty']} | [C#]({solution_path}) |")
 
 rows = [row for row in rows if int(row.split("|")[1]) != problem_number]
 rows.append(new_row)
@@ -79,6 +78,3 @@ readme_lines[progress_row] = (f"| {difficulties.count('Easy')} | {difficulties.c
                               f"| {difficulties.count('Hard')} | {len(rows)} |")
 
 readme_file.write_text("\n".join(readme_lines) + "\n", encoding="utf-8")
-
-
-
