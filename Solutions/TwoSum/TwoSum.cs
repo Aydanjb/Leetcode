@@ -8,9 +8,7 @@ namespace Solutions.TwoSum;
 // Difficulty: Easy
 // Time Complexity: O(n)
 // Space Complexity: O(n)
-public class Solution
-{
-    
+public class Solution {
     /*  Solution:
      *      1. Iterate over the array
      *      2. For each element in nums, check whether its complement `target - nums[i]`
