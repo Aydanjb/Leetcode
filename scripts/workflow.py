@@ -4,7 +4,6 @@ from urllib.parse import urlparse
 import json
 import requests
 from datetime import date
-import html2text
 
 SCRIPTS_DIR = Path(__file__).resolve().parent
 SOLUTIONS_DIR = SCRIPTS_DIR.parent / "Solutions"
