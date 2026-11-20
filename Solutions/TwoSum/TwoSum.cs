@@ -8,7 +8,8 @@ namespace Solutions.TwoSum;
 // Difficulty: Easy
 // Time Complexity: O(n)
 // Space Complexity: O(n)
-public class Solution {
+public class Solution
+{
     /*  Solution:
      *      1. Iterate over the array
      *      2. For each element in nums, check whether its complement `target - nums[i]`
@@ -18,8 +19,8 @@ public class Solution {
     public int[] TwoSum(int[] nums, int target)
     {
         Dictionary<int, int> complements = [];
-    
-        for (int i = 0; i < nums.Length; i++)
+
+        for (var i = 0; i < nums.Length; i++)
         {
             if (complements.TryGetValue(nums[i], out var index)) return [index, i];
             complements.TryAdd(target - nums[i], i);

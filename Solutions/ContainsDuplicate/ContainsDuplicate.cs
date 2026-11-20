@@ -8,7 +8,8 @@ namespace Solutions.ContainsDuplicate;
 // Difficulty: Easy
 // Time Complexity: O(n)
 // Space Complexity: O(n)
-public class Solution {
+public class Solution
+{
     /*  Solution:
      *      1. Iterate over the array
      *      2. For each element in nums, try to add it to the HashSet,
@@ -19,13 +20,12 @@ public class Solution {
      */
     public bool ContainsDuplicate(int[] nums)
     {
-        HashSet<int> seen = new HashSet<int>(nums.Length);
+        var seen = new HashSet<int>(nums.Length);
 
-        foreach (int n in nums)
-        {
-            if (!seen.Add(n)) return true;
-        }
-        
+        foreach (var n in nums)
+            if (!seen.Add(n))
+                return true;
+
         return false;
     }
 }
